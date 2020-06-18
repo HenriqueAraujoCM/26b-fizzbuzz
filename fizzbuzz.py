@@ -57,9 +57,14 @@ def fizzbuzz(vals):
             solution.append(i)
         else:
             solution.append(names[res])
-        
-    for s in solution:
-        print(s, end=" ")
-    print("fizz:", counts[Name.FIZZ], "buzz:", counts[Name.BUZZ], "fizzbuzz:", counts[Name.FIZZBUZZ], "lucky:", counts[Name.LUCKY], "integer:", counts[Name.INTGR])
+    
+    retString = ""
 
-fizzbuzz(range(1,20))
+    for s in solution:
+        #print(s, end=" ")
+        retString += " " + str(s) + " "
+
+    retString += "fizz: " + str(counts[Name.FIZZ]) + " buzz: " + str(counts[Name.BUZZ]) + " fizzbuzz: " + str(counts[Name.FIZZBUZZ]) + " lucky: " + str(counts[Name.LUCKY]) + " integer: " + str(counts[Name.INTGR])
+    return retString
+
+print(fizzbuzz(range(1,21)))
