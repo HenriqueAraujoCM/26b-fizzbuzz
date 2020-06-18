@@ -1,4 +1,5 @@
 from enum import Enum
+#enumeration of the types of values
 class Name(Enum):
      LUCKY = 1
      FIZZ = 2
@@ -6,6 +7,7 @@ class Name(Enum):
      FIZZBUZZ = 4
      INTGR = 5
 
+#checks if the value has the number 3 on it
 def isnotlucky(val):
     while val:
         digit = val%10
@@ -17,6 +19,7 @@ def isnotlucky(val):
         val //= 10
     return True
 
+#checks which of the types the value is
 def isfizzbuzz(val):
 
     lucky = 0
@@ -43,6 +46,7 @@ def isfizzbuzz(val):
     lucky += 1
     return Name.LUCKY
 
+#stores each response and the count of the values
 def fizzbuzz(vals):
 
     solution = []
@@ -62,9 +66,19 @@ def fizzbuzz(vals):
 
     for s in solution:
         #print(s, end=" ")
-        retString += " " + str(s) + " "
+        retString +=str(s) +" "
 
     retString += "fizz: " + str(counts[Name.FIZZ]) + " buzz: " + str(counts[Name.BUZZ]) + " fizzbuzz: " + str(counts[Name.FIZZBUZZ]) + " lucky: " + str(counts[Name.LUCKY]) + " integer: " + str(counts[Name.INTGR])
     return retString
 
-print(fizzbuzz(range(1,21)))
+rtrn = fizzbuzz(range(1,21))
+print("return is:", rtrn)
+
+solution = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz fizz: 4 buzz: 3 fizzbuzz: 1 lucky: 2 integer: 10"
+
+print("solution should be:", solution)
+
+if(rtrn == solution):
+    print("correct")
+else:
+    print("incorrect")
